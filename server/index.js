@@ -4,7 +4,16 @@ var bodyParser = require('body-parser');
 // var items = require('../database-mysql');
 // var items = require('../database-mongo');
 
-var app = express();
+// var app = express();
+
+var admin = require("firebase-admin");
+
+var serviceAccount = require("../serviceAccountKey.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://mvpea-a99df.firebaseio.com"
+});
 
 // UNCOMMENT FOR REACT
 // app.use(express.static(__dirname + '/../react-client/dist'));
@@ -13,17 +22,17 @@ var app = express();
 // app.use(express.static(__dirname + '/../angular-client'));
 // app.use(express.static(__dirname + '/../node_modules'));
 
-app.get('/items', function (req, res) {
-  items.selectAll(function(err, data) {
-    if(err) {
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-    }
-  });
-});
+// app.get('/items', function (req, res) {
+//   items.selectAll(function(err, data) {
+//     if(err) {
+//       res.sendStatus(500);
+//     } else {
+//       res.json(data);
+//     }
+//   });
+// });
 
-app.listen(3000, function() {
-  console.log('listening on port 3000!');
-});
+// app.listen(3000, function() {
+//   console.log('listening on port 3000!');
+// });
 
