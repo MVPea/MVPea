@@ -34,9 +34,16 @@ let Movies = db.collection('movies')
 //    }
 // })
 
-//looks like theres an async issue, get happens before the creation of mvpeaUser3
-//so it grabs only one thing in db
-//and then the new document is created in cloudstore db
+// Users.get()
+// .then(snapshot => {
+//   snapshot.forEach(doc => {
+//     console.log(doc.data());
+//   });
+// })
+// .catch(err => console.log('err', err))
+// looks like theres an async issue, get happens before the creation of mvpeaUser3
+// so it grabs only one thing in db
+// and then the new document is created in cloudstore db
 // db.collection('users').get()
 //   .then((allUsers) => {
 //     allUsers.forEach((doc) => {

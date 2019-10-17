@@ -5,10 +5,10 @@ module.exports = dbHelpers = {
     return Users.get()
   },
   getOneUser: (email) => {
-    return Users.where('email', '==', `${email}`)
+    return Users.doc(email).get()
   },
   postUser: (email, password, firstName, lastName, profile_picture, bio, reviews) => {
-    return Users.doc(email).add({
+    return Users.doc(email).set({
       email, password, firstName, lastName, profile_picture, bio, reviews
     })
   },
@@ -23,6 +23,9 @@ module.exports = dbHelpers = {
   //   return Users.where('reviews', 'array-contains', ) 
   // },
   getAllMovieReviews: (movie) => {
+
+  },
+  postMovie: () => {
 
   },
   postOneMovieReview: (email, movie, review) => {

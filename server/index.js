@@ -1,38 +1,20 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-// UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// var items = require('../database-mysql');
-// var items = require('../database-mongo');
+let express = require('express');
+let bodyParser = require('body-parser');
+let cors = require('cors');
+let morgan = require('morgan');
+let router = require('./router.js');
 
-// var app = express();
+let app = express();
 
-var admin = require('firebase-admin');
-var app = admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://mvpea-a99df.firebaseio.com"
-});
-/* DO ROUTER STUFF HERE*/
+let port = 4000;
 
+app.use(morgan('dev'));
+app.use(cors({origin: true}));
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+app.use(express.static(__dirname + '/../react-client/dist'));
 
+app.use('/api', router)
 
-// UNCOMMENT FOR REACT
-// app.use(express.static(__dirname + '/../react-client/dist'));
-
-// UNCOMMENT FOR ANGULAR
-// app.use(express.static(__dirname + '/../angular-client'));
-// app.use(express.static(__dirname + '/../node_modules'));
-
-// app.get('/items', function (req, res) {
-//   items.selectAll(function(err, data) {
-//     if(err) {
-//       res.sendStatus(500);
-//     } else {
-//       res.json(data);
-//     }
-//   });
-// });
-
-app.listen(3000, function() {
-  console.log('listening on port 3000!');
-});
+app.listen(port, () => console.log(`Listening to port ${port}!`));
 
