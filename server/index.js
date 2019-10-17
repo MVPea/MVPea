@@ -6,14 +6,14 @@ var bodyParser = require('body-parser');
 
 // var app = express();
 
-var admin = require("firebase-admin");
-
-var serviceAccount = require("../serviceAccountKey.json");
-
-admin.initializeApp({
+var admin = require('firebase-admin');
+var app = admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://mvpea-a99df.firebaseio.com"
 });
+/* DO ROUTER STUFF HERE*/
+
+
 
 // UNCOMMENT FOR REACT
 // app.use(express.static(__dirname + '/../react-client/dist'));
@@ -32,7 +32,7 @@ admin.initializeApp({
 //   });
 // });
 
-// app.listen(3000, function() {
-//   console.log('listening on port 3000!');
-// });
+app.listen(3000, function() {
+  console.log('listening on port 3000!');
+});
 
