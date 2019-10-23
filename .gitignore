@@ -1,3 +1,7 @@
 node_modules
 .expo
 .expo-shared
+
+GoogleService-Info.plist
+package-lock.json
+serviceAccountKey.json
