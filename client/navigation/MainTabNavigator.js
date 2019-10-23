@@ -4,7 +4,8 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import TvScreen from '../screens/TvScreen';
+import MovieScreen from '../screens/MovieScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
 const config = Platform.select({
@@ -26,8 +27,8 @@ HomeStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? `ios-home`
+          : 'md-home'
       }
     />
   ),
@@ -35,21 +36,37 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
-const LinksStack = createStackNavigator(
+const MovieStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Movie: MovieScreen,
   },
   config
 );
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+MovieStack.navigationOptions = {
+  tabBarLabel: 'Movie',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-videocam' : 'md-videocam'} />
   ),
 };
 
-LinksStack.path = '';
+MovieStack.path = '';
+
+const TvStack = createStackNavigator(
+  {
+    Tv: TvScreen,
+  },
+  config
+);
+
+TvStack.navigationOptions = {
+  tabBarLabel: 'TV',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-tv' : 'md-tv'} />
+  ),
+};
+
+TvStack.path = '';
 
 const SettingsStack = createStackNavigator(
   {
@@ -69,7 +86,8 @@ SettingsStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  MovieStack,
+  TvStack,
   SettingsStack,
 });
 
