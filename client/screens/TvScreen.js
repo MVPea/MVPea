@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, Text } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 
 export default function TvScreen() {
@@ -9,7 +9,9 @@ export default function TvScreen() {
        * Go ahead and delete ExpoLinksView and replace it with your content;
        * we just wanted to provide you with some helpful links.
        */}
-      <ExpoLinksView />
+      {/* <ExpoLinksView /> */}
+
+      <Text>TV COMPONENT</Text>
     </ScrollView>
   );
 }
