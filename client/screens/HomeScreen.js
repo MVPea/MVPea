@@ -36,7 +36,7 @@ export default function HomeScreen() {
 
           <View
             style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>screens/HomeScreen.js</MonoText>
+            <MonoText>screens/HomeScreen.js I HAVE CONTROL</MonoText>
           </View>
 
           <Text style={styles.getStartedText}>
@@ -174,6 +174,7 @@ const styles = StyleSheet.create({
     }),
     alignItems: 'center',
     backgroundColor: '#fbfbfb',
+    // backgroundColor: '#141414',
     paddingVertical: 20,
   },
   tabBarInfoText: {
