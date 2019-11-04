@@ -14,7 +14,6 @@ export default function TvScreen() {
       <Text>TV COMPONENT</Text>
       <Text>This component is suppose to have a carousel</Text>
       <Text>Using images from the API</Text>
-      <Text></Text>
     </ScrollView>
   );
 }
