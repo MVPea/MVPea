@@ -12,7 +12,6 @@ export default function TvScreen() {
       {/* <ExpoLinksView /> */}
 
       <Text>TV COMPONENT</Text>
-      <Text>This component is suppose to have a carousel</Text>
     </ScrollView>
   );
 }
