@@ -11,7 +11,7 @@ export default function TvScreen() {
        */}
       {/* <ExpoLinksView /> */}
 
-      <Text>TV COMPONENT</Text>
+      <Text>TV COMPONENT!</Text>
     </ScrollView>
   );
 }
