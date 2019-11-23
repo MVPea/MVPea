@@ -10,6 +10,7 @@ export default function MovieScreen() {
        * we just wanted to provide you with some helpful links.
        */}
       <ExpoLinksView />
+      <Text>MOVE COMPONENT!</Text>
     </ScrollView>
   );
 }
