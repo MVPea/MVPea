@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import { ExpoLinksView } from '@expo/samples';
+// import { ExpoLinksView } from '@expo/samples';
 
 export default function MovieScreen() {
   return (
@@ -9,7 +9,7 @@ export default function MovieScreen() {
        * Go ahead and delete ExpoLinksView and replace it with your content;
        * we just wanted to provide you with some helpful links.
        */}
-      <ExpoLinksView />
+      {/* <ExpoLinksView /> */}
       <Text>MOVIE COMPONENT!</Text>
     </ScrollView>
   );
